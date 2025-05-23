@@ -31,7 +31,8 @@ public class GreetingController {
 	public Greeting getGreetingWithFullName(@RequestParam String firstName,
 	                                        @RequestParam String lastName) {
 	    return greetingService.addGreeting(firstName, lastName);
-	}	
-
+	}
+	
+	//UC4: Save greeting (handled implicitly in UC1–UC3 via service layer)
 
 }
