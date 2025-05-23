@@ -14,9 +14,16 @@ public class GreetingController {
 	@Autowired
 	private IGreetingService greetingService;
 
-	// 🟩 UC1: Return default greeting ("Hello World")
+	// UC1: Return default greeting ("Hello World")
 	@GetMapping
 	public Greeting getDefaultGreeting() {
 	    return greetingService.addGreeting(null, null);
 	}
+	
+	//UC2: Return greeting with first name
+		@GetMapping(params = "firstName")
+		public Greeting getGreetingWithFirstName(@RequestParam String firstName) {
+		    return greetingService.addGreeting(firstName, null);
+		}  
+
 }
