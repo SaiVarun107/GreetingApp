@@ -39,6 +39,19 @@ public class GreetingController {
 	@GetMapping("/{id}")
 	public Optional<Greeting> getGreetingById(@PathVariable Long id) {
 	    return greetingService.getGreetingById(id);
+	}
+	
+	//UC6: Get all greetings
+	@GetMapping("/all")
+	public List<Greeting> getAllGreetings() {
+	    return greetingService.getAllGreetings();
+	}
+	
+	//UC7: Update a greeting message by ID
+	@PutMapping("/{id}")
+	public Greeting updateGreeting(@PathVariable Long id,
+	                               @RequestParam String message) {
+	    return greetingService.updateGreeting(id, message);
 	}	
 
 }
