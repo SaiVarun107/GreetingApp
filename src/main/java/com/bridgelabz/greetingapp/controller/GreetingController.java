@@ -20,10 +20,10 @@ public class GreetingController {
 	    return greetingService.addGreeting(null, null);
 	}
 	
-	//  UC2: Return greeting with first name
+	//UC2: Return greeting with first name
 		@GetMapping(params = "firstName")
 		public Greeting getGreetingWithFirstName(@RequestParam String firstName) {
 		    return greetingService.addGreeting(firstName, null);
-		}
+		}  
 
 }
